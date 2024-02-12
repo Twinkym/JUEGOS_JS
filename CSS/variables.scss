@@ -1,17 +1,30 @@
 // Colors
-$color-background: #f8f8f8;
+$color-background-0: #f8f8f8;
+$color-background-1: #eee;
+$color-background-2: #ddd;
 $color-cell-border: #000;
 $color-cell-text: #000;
 $color-x-piece: #f00;
 $color-o-piece: #00f;
 $color-win-highlight: #0f0;
 $color-confeti: #ff0;
+$board-box-shadow: rgba(0,0,0,.5);
+$board-border-color: #aaa;
+
 
 // Sizes
 
 $size-board: 300px;
 $size-cell: 100px;
 $margin-between-cells: 5px;
+$board-border-size: 10px;
+$cell-font-size:  60vw;
+$bevel-top: -10px;
+$bevel-left: -10px;
+$bevel-right: -10px;
+$bevel-bottom: -10px;
+$confeti-size: 10px;
+
 
 // Animations
 
