@@ -1,0 +1,119 @@
+/* 
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc. */
+
+.game-board {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 300px;
+  height: 300px;
+  border: 10px solid #aaa;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.cell {
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  font-size: 60vw;
+  cursor: pointer;
+  transition: background-color 0 ease;
+}
+
+/* Marble effect */
+@keyframes marble-glow {
+  0% {
+    background-color: #f8f8f8;
+  }
+  25% {
+    background-color: #eee;
+  }
+  50% {
+    background-color: #ddd;
+  }
+  75% {
+    background-color: #eee;
+  }
+  100% {
+    background-color: #f8f8f8;
+  }
+}
+/* beveled edges */
+.cell::before, .cell::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: #aaa;
+  z-index: 1;
+}
+
+.cell::after {
+  top: auto;
+  bottom: -10px;
+  left: -10px;
+  right: -10px;
+}
+
+/* Cell Illumination  */
+.cell.light {
+  animation: marmoleado 0.5s ease; /* glow and fade out slowly */
+}
+
+/* Confeti */
+@keyframes confeti {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-800px) rotate(360deg);
+  }
+}
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ff0;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation: confeti 0.5s linear infinite;
+}
+
+.confetti:nth-child(2) {
+  left: 10%;
+}
+
+.confetti:nth-child(3) {
+  left: 20%;
+}
+
+.confetti:nth-child(4) {
+  left: 30%;
+}
+
+.confetti:nth-child(5) {
+  left: 40%;
+}
+
+.confetti:nth-child(6) {
+  left: 50%;
+}
+
+.confetti:nth-child(7) {
+  left: 60%;
+}
+
+.confetti:nth-child(8) {
+  left: 70%;
+}
+
+.confetti:nth-child(9) {
+  left: 80%;
+}
+
+.confetti:nth-child(10) {
+  left: 90%;
+}
+
+/*# sourceMappingURL=tablero.css.map */
