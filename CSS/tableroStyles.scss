@@ -1,8 +1,5 @@
 @import 'variables';
-/*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
- */
+
 .game-board {
     border-collapse: collapse;
     border-spacing: 0;
@@ -10,25 +7,21 @@
     height: $size-board;
     border: 10px solid $board-border-color;
     box-shadow: 0 0 20px rgba(0,0,0,.5);
+    background-color: $color-background-1; /* add a background color */
+    perspective: $ms-perspective;
+    transform-style: preserve-3d;
 }
 
 .cell {
-    width: $size-board;
-    height: $size-board;
+    width: $size-cell; /* Adjust the size of cells */
+    height: $size-cell; /* Adjust the size of cells */
     text-align: center;
     font-size: $cell-font-size;
     cursor: pointer;
     transition: background-color 0 ease;
+    position: relative; /* Add relative position for edges */
+    transform-style: preserve-3d;
 }
-
-/* Marble effect */
-@keyframes marble-glow {
-    0% { background-color:  $color-background-0; }
-    25% { background-color:  $color-background-1; }
-    50% { background-color:  $color-background-2; }
-    75% { background-color:  $color-background-1; }
-    100% { background-color: $color-background-0;}
-    }
 
 /* beveled edges */
 
@@ -40,7 +33,8 @@
     right: $bevel-right;
     bottom: $bevel-bottom;
     background: $board-border-color;
-    z-index: 1;
+    border: 2px solid $color-cell-border;
+    z-index: 4;
 }
 
 .cell::after {

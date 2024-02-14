@@ -1,0 +1,31 @@
+@import "variables";
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+
+.pieces-container {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pieceX {
+  background: $color-x-piece;
+}
+.pieceO {
+  background: $color-o-piece;
+}
+
+.pieceO, .pieceX {
+    width: calc(#{$size-cell} - 10px);
+    height:  calc(#{$size-cell} -10px);
+    border-radius: 50%;
+    margin-bottom: 5px;
+    font-size: medium;
+    line-height:  calc(#{$size-cell} -10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}

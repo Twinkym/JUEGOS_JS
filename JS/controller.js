@@ -10,7 +10,8 @@ import {
 import {
     constants
 } from "./config/constants.js"; // Outsource constants
-import "../CSS/tableroStyles.scss"; // Outsource styles classes
+// import "../CSS/tableroStyles.scss"; // Outsource styles classes
+
 
 class Controller {
     constructor(model, view) {
@@ -26,6 +27,10 @@ class Controller {
         this.view.cells.forEach((cell, index) => {
             cell.addEventListener("click", () => this.handleClick(index));
         });
+    }
+
+    handleClick(index) {
+        console.log(`Clicked cell at index + ${index}`)
     }
     handleMove(index) {
         // Check if the cell is empty and make the move
@@ -45,25 +50,25 @@ class Controller {
                 this.model.switchPlayer();
                 const currentPlayer = this.model.currentPlayer === 'X' ? 'playerXTurn' : 'playerOTurn';
                 this.view.displayMessage(messages[currentPlayer]); // Switch player's turn
-                }
-            } else {
-                //  Throw error if the cell is not empty
-                this.view.displayMessage(messages.emptyField);
             }
-        }
-        getWinCells() {
-                const winConditions = this.model.winConditions;
-                for (const condition of winConditions) {
-                    const [a, b, c] = condition;
-                    const cellA = this.view.cells[a];
-                    const cellB = this.view.cells[b];
-                    const cellC = this.view.cells[c];
-                    if (cellA.dataset.state && cellA.dataset.state === cellB.dataset.state && cellA.dataset.state === cellC.dataset.state) {
-                        return [cellA, cellB, cellC];
-                    }
-                }
-                return null;
+        } else {
+            //  Throw error if the cell is not empty
+            this.view.displayMessage(messages.emptyField);
         }
     }
+    getWinCells() {
+        const winConditions = this.model.winConditions;
+        for (const condition of winConditions) {
+            const [a, b, c] = condition;
+            const cellA = this.view.cells[a];
+            const cellB = this.view.cells[b];
+            const cellC = this.view.cells[c];
+            if (cellA.dataset.state && cellA.dataset.state === cellB.dataset.state && cellA.dataset.state === cellC.dataset.state) {
+                return [cellA, cellB, cellC];
+            }
+        }
+        return null;
+    }
+}
 
-    export default Controller;
+export default Controller;

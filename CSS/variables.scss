@@ -2,7 +2,7 @@
 $color-background-0: #f8f8f8;
 $color-background-1: #eee;
 $color-background-2: #ddd;
-$color-cell-border: #000;
+$color-cell-border: #971616;
 $color-cell-text: #000;
 $color-x-piece: #f00;
 $color-o-piece: #00f;
@@ -10,6 +10,7 @@ $color-win-highlight: #0f0;
 $color-confeti: #ff0;
 $board-box-shadow: rgba(0,0,0,.5);
 $board-border-color: #aaa;
+$padding-cell-color:$color-cell-text;
 
 
 // Sizes
@@ -24,6 +25,9 @@ $bevel-left: -10px;
 $bevel-right: -10px;
 $bevel-bottom: -10px;
 $confeti-size: 10px;
+$padding-cell: .2em;
+$ms-perspective: 30000;
+$piece-size: calc((100% - (4 * #{ $margin-between-cells })) / 4);
 
 
 // Animations

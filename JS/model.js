@@ -1,6 +1,6 @@
 import winConditions from "./winConditions.js";
 
-class Model {
+export default class Model {
     constructor() {
         this.board = ['', '', '', '', '', '', '', '', ''];
         this.currentPlayer = 'X';
@@ -38,4 +38,4 @@ class Model {
     }
 }
 
-export default Model;
+export { Model };

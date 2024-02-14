@@ -1,7 +1,3 @@
-/* 
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc. */
-
 .game-board {
   border-collapse: collapse;
   border-spacing: 0;
@@ -9,35 +5,22 @@
   height: 300px;
   border: 10px solid #aaa;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  background-color: #eee; /* add a background color */
+  perspective: 30000;
+  transform-style: preserve-3d;
 }
 
 .cell {
-  width: 300px;
-  height: 300px;
+  width: 100px; /* Adjust the size of cells */
+  height: 100px; /* Adjust the size of cells */
   text-align: center;
   font-size: 60vw;
   cursor: pointer;
   transition: background-color 0 ease;
+  position: relative; /* Add relative position for edges */
+  transform-style: preserve-3d;
 }
 
-/* Marble effect */
-@keyframes marble-glow {
-  0% {
-    background-color: #f8f8f8;
-  }
-  25% {
-    background-color: #eee;
-  }
-  50% {
-    background-color: #ddd;
-  }
-  75% {
-    background-color: #eee;
-  }
-  100% {
-    background-color: #f8f8f8;
-  }
-}
 /* beveled edges */
 .cell::before, .cell::after {
   content: "";
@@ -47,7 +30,8 @@
   right: -10px;
   bottom: -10px;
   background: #aaa;
-  z-index: 1;
+  border: 2px solid #971616;
+  z-index: 4;
 }
 
 .cell::after {
@@ -116,4 +100,4 @@
   left: 90%;
 }
 
-/*# sourceMappingURL=tablero.css.map */
+/*# sourceMappingURL=tableroStyles.css.map */

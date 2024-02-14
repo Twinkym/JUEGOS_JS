@@ -1,6 +1,6 @@
 import { confettiDuration, confettiDelay } from "./confettiConfig.js";
 
-class View {
+export default class View {
     constructor() {
         this.cells = document.querySelectorAll('.cell');
         this.message = document.getElementById('message');
@@ -60,4 +60,4 @@ randomHorizontalPosition() {
         }, confettiDelay);
     }
 }
-export default View;
+export { View };
